@@ -16,17 +16,27 @@
 
             <div>
                 <label for="nama" class="block font-medium text-[#5C4033]">Nama :</label>
-                <input type="text" id="nama" name="nama" class="w-full border-2 border-[#C8A888] rounded-lg p-3 mt-1 focus:ring-2 focus:ring-[#8C5A3A] outline-none bg-[#F8EDE3]" required>
+                <input type="text" id="nama" name="nama" class="w-full border-2 border-[#C8A888] rounded-lg p-3 mt-1 focus:ring-2 focus:ring-[#8C5A3A] outline-none bg-[#F8EDE3]">
+                @foreach ($errors->get('nama') as $msg)
+                    <p>{{ $msg }}</p>
+                @endforeach
             </div>
 
             <div>
                 <label for="npm" class="block font-medium text-[#5C4033]">NPM :</label>
-                <input type="text" id="npm" name="npm" class="w-full border-2 border-[#C8A888] rounded-lg p-3 mt-1 focus:ring-2 focus:ring-[#8C5A3A] outline-none bg-[#F8EDE3]" required>
+                <input type="text" id="npm" name="npm" class="w-full border-2 border-[#C8A888] rounded-lg p-3 mt-1 focus:ring-2 focus:ring-[#8C5A3A] outline-none bg-[#F8EDE3]">
+                @foreach ($errors->get('npm') as $msg)
+                    <p>{{ $msg }}</p>
+                @endforeach
             </div>
 
             <div>
                 <label for="kelas" class="block font-medium text-[#5C4033]">Kelas :</label>
-                <input type="text" id="kelas" name="kelas" class="w-full border-2 border-[#C8A888] rounded-lg p-3 mt-1 focus:ring-2 focus:ring-[#8C5A3A] outline-none bg-[#F8EDE3]" required>
+                <select name="kelas_id" id="kelas_id">
+                    @foreach ($kelas as $kelasItem)
+                        <option value="{{ $kelasItem->id }}">{{ $kelasItem->nama_kelas }}</option>
+                    @endforeach
+                </select>
             </div>
 
             <button type="submit" class="w-full bg-[#8C5A3A] text-white font-semibold py-3 rounded-lg hover:bg-[#5C4033] transition">✔ Simpan</button>
