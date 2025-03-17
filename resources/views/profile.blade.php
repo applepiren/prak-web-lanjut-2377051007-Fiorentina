@@ -22,10 +22,14 @@
         <img class="w-24 h-24 mx-auto rounded-full border-4 border-blue-500 shadow-lg" src="/img/fio.jpeg" alt="Profile Picture">
         <div class="mt-6 space-y-3">
             <div class="bg-gradient-to-r from-pink-500 to-purple-700 text-white font-bold py-2 rounded-md mb-2 text-lg animated-text shadow-md">
-                <?= $nama ?>
+                {{ $nama }}
             </div>
-            <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-2 rounded-md mb-2 shadow-md animated-text"> <?= $kelas ?> </div>
-            <div class="bg-gradient-to-r from-yellow-400 to-red-500 text-white font-semibold py-2 rounded-md shadow-md animated-text"> <?= $npm ?> </div>
+            <div class="bg-gradient-to-r from-green-400 to-blue-500 text-white font-semibold py-2 rounded-md mb-2 shadow-md animated-text"> 
+                {{ $nama_kelas ?? 'Kelas tidak ditemukan' }} 
+            </div>
+            <div class="bg-gradient-to-r from-yellow-400 to-red-500 text-white font-semibold py-2 rounded-md shadow-md animated-text"> 
+                {{ $npm }} 
+            </div>
         </div>
     </div>
 </body>
